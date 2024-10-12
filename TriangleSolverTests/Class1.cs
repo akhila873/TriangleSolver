@@ -112,6 +112,30 @@ namespace TriangleSolverTests
             string result = triangle.GetTriangleType();
             Assert.That(result, Is.EqualTo("Scalene"));
         }
+        // Zero-length side tests
+        [Test]
+        public void Test_TriangleWithZeroSide1_ReturnsError()
+        {
+            Triangle triangle = new Triangle(0, 3, 3);
+            string result = triangle.GetTriangleType();
+            Assert.That(result, Is.EqualTo("Error: Sides cannot be zero"));
+        }
+
+        [Test]
+        public void Test_TriangleWithZeroSide2_ReturnsError()
+        {
+            Triangle triangle = new Triangle(3, 0, 3);
+            string result = triangle.GetTriangleType();
+            Assert.That(result, Is.EqualTo("Error: Sides cannot be zero"));
+        }
+
+        [Test]
+        public void Test_TriangleWithZeroSide3_ReturnsError()
+        {
+            Triangle triangle = new Triangle(3, 3, 0);
+            string result = triangle.GetTriangleType();
+            Assert.That(result, Is.EqualTo("Error: Sides cannot be zero"));
+        }
 
 
     }
