@@ -81,6 +81,39 @@ namespace TriangleSolverTests
             string result = triangle.GetTriangleType();
             Assert.That(result, Is.EqualTo("Isosceles"));
         }
+        [Test]
+        public void Test_ScaleneTriangle_ValidSides2_ReturnsTrue()
+        {
+            Triangle triangle = new Triangle(6, 8, 10);
+            string result = triangle.GetTriangleType();
+            Assert.That(result, Is.EqualTo("Scalene"));
+        }
+
+        [Test]
+        public void Test_ScaleneTriangle_ValidSides3_ReturnsTrue()
+        {
+            Triangle triangle = new Triangle(7, 8, 9);
+            string result = triangle.GetTriangleType();
+            Assert.That(result, Is.EqualTo("Scalene"));
+        }
+
+        [Test]
+        public void Test_ScaleneTriangle_ValidSides4_ReturnsTrue()
+        {
+            Triangle triangle = new Triangle(9, 10, 11);
+            string result = triangle.GetTriangleType();
+            Assert.That(result, Is.EqualTo("Scalene"));
+        }
+
+        [Test]
+        public void Test_ScaleneTriangle_ValidSides5_ReturnsTrue()
+        {
+            Triangle triangle = new Triangle(13, 14, 15);
+            string result = triangle.GetTriangleType();
+            Assert.That(result, Is.EqualTo("Scalene"));
+        }
+
+
     }
 }
 
